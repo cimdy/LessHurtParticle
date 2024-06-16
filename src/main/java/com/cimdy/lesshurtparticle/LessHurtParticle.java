@@ -31,7 +31,6 @@ public class LessHurtParticle
         NeoForge.EVENT_BUS.addListener(LivingEntityEvent::LivingHurtEvent);
 
         NeoForge.EVENT_BUS.register(this);
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         modEventBus.addListener(this::serverSetup);
 
     }
@@ -40,12 +39,6 @@ public class LessHurtParticle
     {
         LOGGER.info("HELLO FROM COMMON SETUP");
 
-        if (Config.logDirtBlock)
-            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-
-        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
-
-        Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
 
     private void serverSetup(final FMLDedicatedServerSetupEvent event) {
