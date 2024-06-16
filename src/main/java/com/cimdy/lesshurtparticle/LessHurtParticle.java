@@ -38,7 +38,6 @@ public class LessHurtParticle
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         LOGGER.info("HELLO FROM COMMON SETUP");
-
     }
 
     private void serverSetup(final FMLDedicatedServerSetupEvent event) {
