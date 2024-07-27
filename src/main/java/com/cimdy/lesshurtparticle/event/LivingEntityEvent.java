@@ -16,7 +16,10 @@ public class LivingEntityEvent {
                 int f = (int) (damage / livingEntity.getMaxHealth() * 5);
                 f = Math.max(f, 1);
                 ServerLevel serverLevel = (ServerLevel) livingEntity.level();
-                serverLevel.sendParticles(ParticleTypes.DAMAGE_INDICATOR, livingEntity.getX(), livingEntity.getY(0.5), livingEntity.getZ(), f, 0.1, 0.0, 0.1, 0.2);
+                serverLevel.sendParticles(
+                        ParticleTypes.DAMAGE_INDICATOR,
+                        livingEntity.getX(), livingEntity.getY(0.5), livingEntity.getZ(),
+                        f, 0.1, 0.0, 0.1, 0.2);
             }
         }
     }
