@@ -8,7 +8,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(Player.class)
 public class PlayerMixin{
-    @Redirect(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;getHealth()F", ordinal = 1))
+    @Redirect(method = "attack", at = @At(value = "INVOKE",
+            target = "Lnet/minecraft/world/entity/LivingEntity;getHealth()F", ordinal = 1))
     private float attack(LivingEntity livingEntity){
         return livingEntity.getMaxHealth();
     }
